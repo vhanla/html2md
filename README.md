@@ -18,10 +18,12 @@ This project provides a DLL for converting HTML to Markdown, along with a Pascal
 
 1. Include the `HTMLToMarkDown` unit in your Pascal project.
 2. Call the `ConvertHTMLToMarkdown` function to convert HTML to Markdown.
+3. Make sure to include the `html2md.dll` next to your executable or in a visible global PATH.
+
 
 Delphi
 
-```code-container ng-tns-c737781475-55 formatted
+```pascal
 var
   errorMsg: string;
   mdResult: string;
@@ -66,7 +68,7 @@ To use the demo application:
 
 ## Additional Notes
 
-- The DLL uses a cache to store conversion results. The default timeout for cached results is 30 seconds.
+- The DLL uses a cache to store conversion results. The default timeout for cached results is 30 seconds, this is for failed conversion as the GO garbage collector releases the buffer.
 - The cache size can be adjusted.
 - The demo application demonstrates how to paste HTML from the clipboard and convert it to Markdown.
 
